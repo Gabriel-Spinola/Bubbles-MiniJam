@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        xAxis = Input.GetAxis("Horizontal");
+        xAxis = Input.GetAxisRaw("Horizontal");
 
         keyJump = Input.GetButtonDown("Jump");
     }

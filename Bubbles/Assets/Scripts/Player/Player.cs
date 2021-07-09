@@ -17,10 +17,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float friction = 0.25f;
 
+    public float lerpMovement = 10;
+
     [Header("Jump")]
     [SerializeField] private float jumpForce = 12f;
     [SerializeField] private float wallJumpForce = 5f;
-    [SerializeField] private float wallJumpLerp = 10;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
 
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float colRadius = 0.32f;
     [Range(0.1f, 1f)]
     [SerializeField] private float bottomColRadius = 0.5f;
+
+    [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
 
@@ -72,6 +75,7 @@ public class Player : MonoBehaviour
             canJump = 10;
 
             wallJumped = false;
+            shouldLerpMovement = false;
         }
 
         if (canJump > 0 && InputManager.I.keyJump)
@@ -85,13 +89,12 @@ public class Player : MonoBehaviour
         if (!canMove)
             return;
 
+        if (wallJumped || shouldLerpMovement) {
+            rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y), lerpMovement * Time.deltaTime);
+        }
+
         if (InputManager.I.xAxis != 0) {
-            if (wallJumped) {
-                rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y), wallJumpLerp * Time.deltaTime);
-            }
-            else {
-                rb.velocity = new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y);
-            }
+            rb.velocity = new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y);
         }
         else {
             rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, friction), rb.velocity.y);
@@ -108,10 +111,10 @@ public class Player : MonoBehaviour
         canJump = 0;
     }
     
-    public void Jump(float jumpForce)
+    public void Jump(Vector2 dir, float jumpForce)
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.velocity += Vector2.up * jumpForce;
+        rb.velocity += dir * jumpForce;
 
         canJump = 0;
     }

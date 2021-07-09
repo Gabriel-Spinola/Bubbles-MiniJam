@@ -15,7 +15,9 @@ public class CommonBubble : Bubble
             Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
 
             Player player_ = collision.gameObject.AddComponent<Player>();
-            player_.Jump(kockbackForce); 
+
+            player_.shouldLerpMovement = true;
+            player_.Jump(collision.gameObject.transform.position - transform.position, kockbackForce); 
 
             Destroy(gameObject);
         }

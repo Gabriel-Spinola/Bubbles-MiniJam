@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ExplosiveBubble : Enemy
 {
+    [Header("This References")]
+    [SerializeField] protected ParticleSystem movingEffect = null;
+    [SerializeField] protected GameObject explodeEffect = null;
+
     [Header("Attack")]
     [Range(0f, 5f)]
     [SerializeField] private float explosionRadius = 2.8f;
@@ -52,6 +56,9 @@ public class ExplosiveBubble : Enemy
             playerRb.MovePosition(playerRb.position + dir * -explosionKnockbackForce * Time.fixedDeltaTime);
         }
 
+        Destroy(gameObject);
+
+        Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
         Destroy(gameObject);
     }
 

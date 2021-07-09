@@ -652,6 +652,9 @@ MonoBehaviour:
   chaseRadius: 500
   attackRadius: 5
   nextWaypointDistance: 3
+  movingEffect: {fileID: 0}
+  explodeEffect: {fileID: 8301161908572177343, guid: dc9c618d08e696a4b8495d237a017dba,
+    type: 3}
   explosionRadius: 2.8
   explosionDamage: 10
   explosionDelay: 1.5

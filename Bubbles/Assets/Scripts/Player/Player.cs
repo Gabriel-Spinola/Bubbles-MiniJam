@@ -110,7 +110,7 @@ public class Player : MonoBehaviour
         dustEffect.Play();
         wallJumped = true;
 
-        //StopCoroutine(DisableMovement(0f));
+        StopCoroutine(DisableMovement(0f));
         StartCoroutine(DisableMovement(0.1f));
 
         Vector2 wallDir = isLeftWall ? Vector2.right : Vector2.left;

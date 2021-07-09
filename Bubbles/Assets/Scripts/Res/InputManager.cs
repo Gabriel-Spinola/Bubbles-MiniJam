@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -16,5 +17,9 @@ public class InputManager : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
 
         keyJump = Input.GetButtonDown("Jump");
+
+        if (Input.GetKeyDown(KeyCode.RightAlt)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

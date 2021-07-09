@@ -19,16 +19,25 @@ public class CommonBubble : Bubble
     protected override void Behaviour()
     {
         //throw new System.NotImplementedException();
-        transform.DOMoveY(0.5f, 1f);
-        transform.DORestart();
+        //transform.DOMoveY(0.5f, 1f);
+       // transform.DORestart();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
-            explodeEffect.Play();
+            Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
 
             Destroy(gameObject);
+
+            //Destroy(GetComponent<SpriteRenderer>());
+            //Destroy(GetComponent<CircleCollider2D>());
+
+            //transform.DetachChildren();
+
+            //Destroy(transform.Find(explodeEffect.gameObject.name), explodeEffect.main.duration + 0.1f);
+            //Destroy(gameObject, explodeEffect.main.duration + 0.1f);
         }
     }
 }
+

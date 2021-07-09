@@ -2311,11 +2311,13 @@ MonoBehaviour:
   moveSpeed: 10
   friction: 0.25
   jumpForce: 10
+  wallJumpForce: 15
+  wallJumpLerp: 10
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   bottomColOffset: {x: 0, y: -0.12, z: 0}
-  rightColOffset: {x: -0.3, y: 0, z: 0}
-  leftColOffset: {x: 0.3, y: 0, z: 0}
+  rightColOffset: {x: 0.3, y: 0, z: 0}
+  leftColOffset: {x: -0.3, y: 0, z: 0}
   colRadius: 0.32
   bottomColRadius: 0.5
 --- !u!50 &1649373448

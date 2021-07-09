@@ -1,0 +1,102 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TemporaryBubble : Bubble
+{
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float duration = 1f;
+
+    private Player player;
+
+    private int xDir = 0;
+    private int yDir = 0;
+
+    private bool xHasChoosed;
+    private bool yHasChoosed;
+
+    bool start = false;
+
+    private void Awake() => player = GameObject.Find("[Player]").GetComponent<Player>();
+
+    private void Update()
+    {
+        if (start) {
+            if (InputManager.I.keyD && !xHasChoosed) {
+                xDir = 1;
+
+                xHasChoosed = true;
+            }
+
+            if (InputManager.I.keyA && !xHasChoosed) {
+                xDir = -1;
+
+                xHasChoosed = true;
+            }
+
+            if (InputManager.I.keyW && !yHasChoosed) {
+                yDir = 1;
+
+                yHasChoosed = true;
+            }
+
+            if (InputManager.I.keyS && !yHasChoosed) {
+                yDir = -1;
+
+                yHasChoosed = true;
+            }
+        }
+    }
+
+    private void Move()
+    {
+        player.canMove = false;
+        player.transform.position = transform.position;
+
+        if (InputManager.I.keyJump) {
+            Explode();
+        }
+
+        if (xHasChoosed || yHasChoosed)
+            StartCoroutine(Explode(duration));
+
+        player.GetRigidbody().gravityScale = 0;
+
+        transform.Translate(transform.right * xDir * speed * Time.deltaTime);
+        transform.Translate(transform.up * yDir * speed * Time.deltaTime);
+    }
+
+    private IEnumerator Explode(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        player.canMove = true;
+        player.GetRigidbody().gravityScale = 1;
+
+        Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+        Destroy(gameObject);
+    }
+    
+    private void Explode()
+    {
+        player.canMove = true;
+        player.GetRigidbody().gravityScale = 1;
+
+        Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        start = true;   
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        start = true;
+
+        if (collision.gameObject.CompareTag("Player")) {
+            Move();
+        }
+    }
+}

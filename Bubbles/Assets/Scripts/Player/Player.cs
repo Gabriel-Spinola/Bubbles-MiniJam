@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     [Range(0.1f, 1f)]
     [SerializeField] private float bottomColRadius = 0.5f;
 
+    [HideInInspector] public bool canMove = true;
     [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
@@ -46,7 +47,6 @@ public class Player : MonoBehaviour
     private bool isLeftWall = false;
     private bool isOnWall = false;
 
-    private bool canMove = true;
     private bool wallJumped = false;
 
     private float lookAngle;
@@ -167,6 +167,8 @@ public class Player : MonoBehaviour
 
         canMove = true;
     }
+
+    public Rigidbody2D GetRigidbody() => rb;
 
     private void OnDrawGizmosSelected()
     {

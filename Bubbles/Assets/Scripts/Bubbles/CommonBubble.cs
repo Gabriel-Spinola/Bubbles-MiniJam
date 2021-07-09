@@ -7,8 +7,6 @@ public class CommonBubble : Bubble
 {
     [SerializeField] private float kockbackForce = 5f;
 
-    protected override void Behaviour() {}
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {

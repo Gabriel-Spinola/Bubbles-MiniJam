@@ -107,6 +107,14 @@ public class Player : MonoBehaviour
 
         canJump = 0;
     }
+    
+    public void Jump(float jumpForce)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.velocity += Vector2.up * jumpForce;
+
+        canJump = 0;
+    }
 
     private void WallJump()
     {

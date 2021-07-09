@@ -5,28 +5,17 @@ using DG.Tweening;
 
 public class CommonBubble : Bubble
 {
-    private void Start()
-    {
+    [SerializeField] private float kockbackForce = 5f;
 
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        Behaviour();
-    }
-
-    protected override void Behaviour()
-    {
-        //throw new System.NotImplementedException();
-        //transform.DOMoveY(0.5f, 1f);
-       // transform.DORestart();
-    }
+    protected override void Behaviour() {}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
             Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+
+            Player player_ = collision.gameObject.AddComponent<Player>();
+            player_.Jump(kockbackForce); 
 
             Destroy(gameObject);
         }

@@ -7,13 +7,13 @@ public class TemporaryBubble : Bubble
     [SerializeField] private float speed = 10f;
     [SerializeField] private float duration = 1f;
 
-    private Player player;
+    private Player player = null;
 
     private int xDir = 0;
     private int yDir = 0;
 
-    private bool xHasChoosed;
-    private bool yHasChoosed;
+    private bool xHasChoosed = false;
+    private bool yHasChoosed = false;
 
     bool start = false;
 

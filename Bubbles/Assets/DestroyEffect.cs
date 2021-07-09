@@ -6,6 +6,8 @@ public class DestroyEffect : MonoBehaviour
 {
     void Start()
     {
-        var s = GetComponent<ParticleSystem>();  var a = s.main; a.stopAction = ParticleSystemStopAction.Destroy;
+        ParticleSystem ps = GetComponent<ParticleSystem>();  
+        ParticleSystem.MainModule main = ps.main; 
+        main.stopAction = ParticleSystemStopAction.Destroy;
     }
 }

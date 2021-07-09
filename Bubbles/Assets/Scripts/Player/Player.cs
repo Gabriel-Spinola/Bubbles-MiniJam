@@ -6,12 +6,12 @@ using Resources;
 public class Player : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private ParticleSystem dustEffect;
+    [SerializeField] private ParticleSystem dustEffect = null;
 
     [SerializeField] private LayerMask whatIsColEnv = 0;
 
     [Header("Stats")]
-    [SerializeField] private float health;
+    [SerializeField] private float health = 10f;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
@@ -25,9 +25,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float lowJumpMultiplier = 2f;
 
     [Header("Collision")]
-    [SerializeField] private Vector3 bottomColOffset;
-    [SerializeField] private Vector3 rightColOffset;
-    [SerializeField] private Vector3 leftColOffset;
+    [SerializeField] private Vector3 bottomColOffset = Vector2.zero;
+    [SerializeField] private Vector3 rightColOffset = Vector2.zero;
+    [SerializeField] private Vector3 leftColOffset = Vector2.zero;
 
     [Range(0.1f, 1f)]
     [SerializeField] private float colRadius = 0.32f;

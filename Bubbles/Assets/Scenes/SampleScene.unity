@@ -7343,7 +7343,7 @@ MonoBehaviour:
   whatIsColEnv:
     serializedVersion: 2
     m_Bits: 256
-  health: 0
+  health: 10
   moveSpeed: 10
   friction: 0.25
   jumpForce: 10

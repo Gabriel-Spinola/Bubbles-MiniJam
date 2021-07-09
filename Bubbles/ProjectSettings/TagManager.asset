@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1875230019
+    locked: 0
+  - name: InEnv
+    uniqueID: 2933218257
+    locked: 0
+  - name: Entities
+    uniqueID: 2839149277
+    locked: 0
+  - name: Particles
+    uniqueID: 858203535
+    locked: 0

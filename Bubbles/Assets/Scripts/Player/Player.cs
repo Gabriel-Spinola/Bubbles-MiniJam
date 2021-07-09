@@ -6,6 +6,8 @@ using Resources;
 public class Player : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private ParticleSystem dustEffect;
+
     [SerializeField] private LayerMask whatIsColEnv = 0;
 
     [Header("Movement")]
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        dustEffect.Play();
+
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += Vector2.up * jumpForce;
 
@@ -103,6 +107,7 @@ public class Player : MonoBehaviour
 
     private void WallJump()
     {
+        dustEffect.Play();
         wallJumped = true;
 
         //StopCoroutine(DisableMovement(0f));
@@ -133,7 +138,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FlipSprite() => transform.localScale = lookAngle < 90 && lookAngle > -90 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
+    private void FlipSprite() 
+    { 
+        transform.localScale = lookAngle < 90 && lookAngle > -90 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
+    }
 
     public IEnumerator DisableMovement(float time)
     {

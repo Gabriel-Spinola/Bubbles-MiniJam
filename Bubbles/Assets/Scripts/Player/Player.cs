@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
     public static Player I { get; private set; }
 
-    private Rigidbody2D rb;
+    private Rigidbody2D rb = null;
 
     private bool isGrounded = false;
     private bool isRightWall = false;
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     private bool wallJumped = false;
 
-    private float lookAngle;
+    private float lookAngle = 0f;
     
     private int canJump = 0;
 

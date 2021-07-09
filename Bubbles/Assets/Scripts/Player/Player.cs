@@ -9,11 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask whatIsColEnv = 0;
 
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 0f;
-    [SerializeField] private float friction = 0f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float friction = 0.25f;
 
     [Header("Jump")]
-    [SerializeField] private float jumpForce = 0f;
+    [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float wallJumpForce = 5f;
+    [SerializeField] private float wallJumpLerp = 10;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
 
@@ -36,8 +38,11 @@ public class Player : MonoBehaviour
     private bool isLeftWall = false;
     private bool isOnWall = false;
 
-    private float lookAngle;
+    private bool canMove = true;
+    private bool wallJumped = false;
 
+    private float lookAngle;
+    
     private int canJump = 0;
 
     private void Awake() 
@@ -58,15 +63,30 @@ public class Player : MonoBehaviour
 
         canJump -= 1;
 
-        if (isGrounded) canJump = 10;
+        if (isGrounded) {
+            canJump = 10;
+
+            wallJumped = false;
+        }
+
         if (canJump > 0 && InputManager.I.keyJump)
             Jump();
+        if (isOnWall && !isGrounded && InputManager.I.keyJump)
+            WallJump();
     }
 
     private void Movement()
     {
+        if (!canMove)
+            return;
+
         if (InputManager.I.xAxis != 0) {
-            rb.velocity = new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y);
+            if (wallJumped) {
+                rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y), wallJumpLerp * Time.deltaTime);
+            }
+            else {
+                rb.velocity = new Vector2(InputManager.I.xAxis * moveSpeed, rb.velocity.y);
+            }
         }
         else {
             rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, friction), rb.velocity.y);
@@ -79,6 +99,19 @@ public class Player : MonoBehaviour
         rb.velocity += Vector2.up * jumpForce;
 
         canJump = 0;
+    }
+
+    private void WallJump()
+    {
+        wallJumped = true;
+
+        //StopCoroutine(DisableMovement(0f));
+        StartCoroutine(DisableMovement(0.1f));
+
+        Vector2 wallDir = isLeftWall ? Vector2.right : Vector2.left;
+
+        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.velocity += (Vector2.up / 1.5f + wallDir / 1.5f) * wallJumpForce;
     }
 
     private void Collision()
@@ -101,6 +134,15 @@ public class Player : MonoBehaviour
     }
 
     private void FlipSprite() => transform.localScale = lookAngle < 90 && lookAngle > -90 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
+
+    public IEnumerator DisableMovement(float time)
+    {
+        canMove = false;
+
+        yield return new WaitForSeconds(time);
+
+        canMove = true;
+    }
 
     private void OnDrawGizmosSelected()
     {

@@ -7755,11 +7755,13 @@ MonoBehaviour:
   attackPointRotRadius: 0.5
   maxHealth: 100
   speed: 500
-  chaseRadius: 10
-  attackRadius: 4.6
+  chaseRadius: 500
+  attackRadius: 0.88
   nextWaypointDistance: 3
   damage: 10
   attackRate: 6
+  duration: 0.4
+  deatachForce: 100
 --- !u!4 &918240253567060411
 Transform:
   m_ObjectHideFlags: 0

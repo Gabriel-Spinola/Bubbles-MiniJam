@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TemporaryBubble : Bubble
+public class TemporaryBubble : MonoBehaviour
 {
+    [SerializeField] protected ParticleSystem movingEffect = null;
+    [SerializeField] protected GameObject explodeEffect = null;
+
     [SerializeField] private float speed = 10f;
     [SerializeField] private float duration = 1f;
 

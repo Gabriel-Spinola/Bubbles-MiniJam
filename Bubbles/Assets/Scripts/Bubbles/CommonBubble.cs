@@ -29,14 +29,6 @@ public class CommonBubble : Bubble
             Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
 
             Destroy(gameObject);
-
-            //Destroy(GetComponent<SpriteRenderer>());
-            //Destroy(GetComponent<CircleCollider2D>());
-
-            //transform.DetachChildren();
-
-            //Destroy(transform.Find(explodeEffect.gameObject.name), explodeEffect.main.duration + 0.1f);
-            //Destroy(gameObject, explodeEffect.main.duration + 0.1f);
         }
     }
 }

@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private LayerMask whatIsColEnv = 0;
 
+    [Header("Stats")]
+    [SerializeField] private float health;
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float friction = 0.25f;
@@ -142,6 +145,8 @@ public class Player : MonoBehaviour
     { 
         transform.localScale = lookAngle < 90 && lookAngle > -90 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
     }
+
+    public void TakeDamage(float damage) => health -= damage;
 
     public IEnumerator DisableMovement(float time)
     {

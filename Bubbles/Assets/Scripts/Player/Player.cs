@@ -197,6 +197,17 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.layer == 31) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spikes")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (collision.CompareTag("Player Spikes")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Resources;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Shuriken : MonoBehaviour
 {
@@ -58,6 +59,17 @@ public class Shuriken : MonoBehaviour
     {
         if (collision.gameObject.layer == 8) {
             life--;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spikes")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (collision.CompareTag("SSPikes")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

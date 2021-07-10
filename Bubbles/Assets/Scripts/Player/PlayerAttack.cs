@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackPointRotRadius = 1f;
 
     [Header("Shuriken")]
+    [SerializeField] private int shurikenDamage = 1;
     [SerializeField] private int shurikenHealth = 3;
     [SerializeField] private float duration = 5f;
     [SerializeField] private float cooldown = .5f;
@@ -55,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
             shurikensUsed++;
 
             StartCoroutine(Cooldown(duration + cooldown));
+            player.TakeDamage(shurikenDamage);
         }
         
         Aim();

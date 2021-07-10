@@ -129,4 +129,3 @@ public class TemporaryBubble : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sphereRadius);
     }
 }
-

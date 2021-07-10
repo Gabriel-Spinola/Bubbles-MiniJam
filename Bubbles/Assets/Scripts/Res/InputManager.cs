@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public bool keyS;
 
     public bool keyJump;
+    public bool btnThrowShuriken;
 
     private void Awake() => I = this;
 
@@ -28,6 +29,8 @@ public class InputManager : MonoBehaviour
         keyS = Input.GetKeyDown(KeyCode.S);
 
         keyJump = Input.GetButtonDown("Jump");
+
+        btnThrowShuriken = Input.GetButtonDown("Fire1");
 
         if (Input.GetKeyDown(KeyCode.RightAlt)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

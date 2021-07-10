@@ -14,22 +14,24 @@ public class Shuriken : MonoBehaviour
     [Range(0.1f, 1f)]
     [SerializeField] private float colRadius = 0.32f;
 
-    void Update()
+    private Rigidbody2D rb;
+
+    private void Awake()
     {
-        Collider2D col = Physics2D.OverlapCircle(transform.position, colRadius, whatIsEnv);
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-        if (col) {
-            Vector2 reflectDir = col.gameObject.transform.position - transform.position;
+    private void Start()
+    {
+        rb.freezeRotation = true;
+    }
 
-            Debug.Log($"Collided: { col.gameObject.name }");
+    private void FixedUpdate()
+    {
+        Vector2 dir = StaticRes.LookDir(transform.position, true);
+        dir.Normalize();
 
-            transform.Translate(reflectDir.normalized * -reflectForce * Time.deltaTime);
-        }
-        else {
-            Vector2 dir = StaticRes.LookDir(transform.position, true);
-
-            transform.Translate(dir.normalized * speed * Time.deltaTime);
-        }
+        rb.MovePosition((Vector2) transform.position + (dir * speed * Time.fixedDeltaTime));
     }
 
     public IEnumerator DieOnTimer(float time)

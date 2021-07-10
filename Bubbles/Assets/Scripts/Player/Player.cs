@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float bottomColRadius = 0.5f;
 
     [HideInInspector] public bool canMove = true;
+    [HideInInspector] public bool isControlled = false;
     [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
@@ -76,6 +77,10 @@ public class Player : MonoBehaviour
 
             wallJumped = false;
             shouldLerpMovement = false;
+        }
+
+        if (isControlled && InputManager.I.keyJump) {
+
         }
 
         if (canJump > 0 && InputManager.I.keyJump)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Resources;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -135,7 +136,7 @@ public class Player : MonoBehaviour
         Vector2 wallDir = isLeftWall ? Vector2.right : Vector2.left;
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.velocity += (Vector2.up / 2 + wallDir * 1f) * wallJumpForce;
+        rb.velocity += (Vector2.up / 1.5f + wallDir / 1.5f) * wallJumpForce;
 
         wallJumpCount += 1;
     }
@@ -176,6 +177,13 @@ public class Player : MonoBehaviour
     }
 
     public Rigidbody2D GetRigidbody() => rb;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 31) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

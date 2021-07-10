@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 836864223073196528}
   - component: {fileID: 836864223073196530}
   - component: {fileID: 836864223073196527}
-  - component: {fileID: 836864223073196529}
   m_Layer: 0
-  m_Name: Bubble
+  m_Name: Common Bubble
   m_TagString: Bubbles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,22 +115,3 @@ MonoBehaviour:
   explodeEffect: {fileID: 8301161908572177343, guid: a6aee8793948ebb47bfc594e7ab8e779,
     type: 3}
   kockbackForce: 10
---- !u!95 &836864223073196529
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836864223073196525}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31a252258a7ef6a4ba639bf8c6524096, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

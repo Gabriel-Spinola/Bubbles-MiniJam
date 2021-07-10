@@ -117,8 +117,6 @@ public class TemporaryBubble : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //start = true;
-
         if (collision.gameObject.CompareTag("Player")) {
             Move();
         }

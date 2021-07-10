@@ -25,6 +25,8 @@ public class TemporaryBubble : MonoBehaviour
     private void Update()
     {
         if (start) {
+            player.transform.position = transform.position;
+
             if (InputManager.I.keyJump) {
                 Explode();
             }
@@ -58,7 +60,6 @@ public class TemporaryBubble : MonoBehaviour
     private void Move()
     {
         player.canMove = false;
-        player.transform.position = transform.position;
 
         if (!InputManager.I.keyJump) {
             player.GetRigidbody().gravityScale = 0;
@@ -77,8 +78,8 @@ public class TemporaryBubble : MonoBehaviour
 
         player.canMove = true;
         player.shouldLerpMovement = true;
-
         player.GetRigidbody().gravityScale = 1;
+
         player.Jump(Vector2.up, 10f);
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
@@ -88,7 +89,9 @@ public class TemporaryBubble : MonoBehaviour
     private void Explode()
     {
         player.canMove = true;
+        player.shouldLerpMovement = true;
         player.GetRigidbody().gravityScale = 1;
+
         player.Jump(Vector2.up, 10f);
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;

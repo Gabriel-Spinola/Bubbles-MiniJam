@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float bottomColRadius = 0.5f;
 
     [HideInInspector] public bool canMove = true;
-    [HideInInspector] public bool useBetterJump = true;
+    private bool useBetterJump = true;
     [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
@@ -183,6 +183,7 @@ public class Player : MonoBehaviour
     }
 
     public Rigidbody2D GetRigidbody() => rb;
+    public void SetBetterJump(bool val) => useBetterJump = val;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

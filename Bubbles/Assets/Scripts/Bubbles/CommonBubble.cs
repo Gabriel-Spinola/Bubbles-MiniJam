@@ -18,6 +18,8 @@ public class CommonBubble : MonoBehaviour
             Player player_ = collision.gameObject.AddComponent<Player>();
 
             player_.shouldLerpMovement = true;
+
+            player_.SetBetterJump(false);
             player_.Jump(collision.gameObject.transform.position - transform.position, kockbackForce); 
 
             Destroy(gameObject);

@@ -38,20 +38,20 @@ public class Player : MonoBehaviour
     [Range(0.1f, 1f)]
     [SerializeField] private float bottomColRadius = 0.5f;
 
+    [HideInInspector] public bool isGrounded = false;
+    [HideInInspector] public bool isRightWall = false;
+    [HideInInspector] public bool isLeftWall = false;
+    [HideInInspector] public bool isOnWall = false;
+
     [HideInInspector] public bool canMove = true;
-    private bool useBetterJump = true;
     [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
 
     private Rigidbody2D rb = null;
 
-    private bool isGrounded = false;
-    private bool isRightWall = false;
-    private bool isLeftWall = false;
-    private bool isOnWall = false;
-
     private bool wallJumped = false;
+    private bool useBetterJump = true;
 
     private int wallJumpCount = 0;
 
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
 
     private void BetterJumping()
     {
-        if (useBetterJump is false)
+        if (!useBetterJump)
             return;
 
         if (rb.velocity.y < 0) {

@@ -74,7 +74,10 @@ public class TemporaryBubble : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         player.canMove = true;
+        player.shouldLerpMovement = true;
+
         player.GetRigidbody().gravityScale = 1;
+        player.Jump(Vector2.up, 10f);
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
         Destroy(gameObject);

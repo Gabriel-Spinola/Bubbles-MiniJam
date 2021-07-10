@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4198764625446324582}
   - component: {fileID: 1545161852069568077}
   - component: {fileID: 8585366843411128466}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Shuriken
   m_TagString: Shuriken
   m_Icon: {fileID: 0}
@@ -52,6 +52,7 @@ MonoBehaviour:
   life: 3
   speed: 10
   reflectForce: 20
+  isBreaked: 0
   colRadius: 0.312
 --- !u!58 &1545161852069568077
 CircleCollider2D:
@@ -103,7 +104,7 @@ GameObject:
   - component: {fileID: 4198764626207415160}
   - component: {fileID: 4198764626207415162}
   - component: {fileID: 4198764626207415161}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Shuriken Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

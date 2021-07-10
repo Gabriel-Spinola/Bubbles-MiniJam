@@ -35,8 +35,10 @@ public class TemporaryBubble : MonoBehaviour
                 Explode();
             }
 
-            if (InputManager.I.keyJump) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
                 Explode();
+
+                Debug.Log("Kidding me?");
             }
 
             if (InputManager.I.keyD && !xHasChoosed) {
@@ -74,7 +76,7 @@ public class TemporaryBubble : MonoBehaviour
         }
 
         if (xHasChoosed || yHasChoosed)
-            StartCoroutine(Explode(duration));
+           StartCoroutine(Explode(duration));
 
         transform.Translate(transform.right * xDir * speed * Time.deltaTime);
         transform.Translate(transform.up * yDir * speed * Time.deltaTime);
@@ -127,3 +129,4 @@ public class TemporaryBubble : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sphereRadius);
     }
 }
+

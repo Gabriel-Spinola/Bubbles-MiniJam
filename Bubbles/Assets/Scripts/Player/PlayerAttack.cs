@@ -41,6 +41,14 @@ public class PlayerAttack : MonoBehaviour
     {
         angle = StaticRes.LookDir(transform.position);
 
+        if (isAShuriken && shuriken.life <= 0) {
+            StopCoroutine(EnableIsAShuriken(0f));
+            StopCoroutine(shuriken.DieOnTimer(0f));
+
+            isAShuriken = false;
+            shuriken.isBreaked = true;
+        }
+
         if (InputManager.I.btnThrowShuriken && !isAShuriken && shurikensUsed < maxAmountOfShurikens && canShoot) {
             Shoot();
 

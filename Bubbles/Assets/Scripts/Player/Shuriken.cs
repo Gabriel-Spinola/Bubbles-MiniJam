@@ -10,6 +10,7 @@ public class Shuriken : MonoBehaviour
 
     public float speed = 10f;
     public float reflectForce = 20f;
+    public bool isBreaked = false;
 
     [Range(0.1f, 1f)]
     [SerializeField] private float colRadius = 0.32f;
@@ -26,6 +27,14 @@ public class Shuriken : MonoBehaviour
         rb.freezeRotation = true;
     }
 
+    private void Update()
+    {
+        if (isBreaked) {
+            StopAllCoroutines();
+            Destroy(gameObject);
+        }
+    }
+
     private void FixedUpdate()
     {
         Vector2 dir = StaticRes.LookDir(transform.position, true);
@@ -38,7 +47,18 @@ public class Shuriken : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        Destroy(gameObject);
+        try {
+            Destroy(gameObject);
+        } catch {
+
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 8) {
+            life--;
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -112,11 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingEffect: {fileID: 0}
-  explodeEffect: {fileID: 8301161908572177343, guid: a6aee8793948ebb47bfc594e7ab8e779,
+  explodeEffect: {fileID: 8301161908572177343, guid: 728f9a4c8f47dd74a92d0dc3e75bd78a,
     type: 3}
   whatIsWall:
     serializedVersion: 2
     m_Bits: 256
   speed: 15
-  duration: 1
+  duration: 5
   sphereRadius: 1

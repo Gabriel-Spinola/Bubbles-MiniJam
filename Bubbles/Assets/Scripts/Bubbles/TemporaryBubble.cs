@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class TemporaryBubble : MonoBehaviour
 {
-    [SerializeField] protected ParticleSystem movingEffect = null;
-    [SerializeField] protected GameObject explodeEffect = null;
+    [SerializeField] private ParticleSystem movingEffect = null;
+    [SerializeField] private GameObject explodeEffect = null;
+
+    [SerializeField] private LayerMask whatIsWall = 8;
 
     [SerializeField] private float speed = 10f;
     [SerializeField] private float duration = 1f;
+    [Range(0.1f, 1f)]
+    [SerializeField] private float sphereRadius = 0.5f;
 
     private Player player = null;
 
@@ -26,6 +30,10 @@ public class TemporaryBubble : MonoBehaviour
     {
         if (start) {
             player.transform.position = transform.position;
+
+            if (Physics2D.OverlapCircle(transform.position, sphereRadius, whatIsWall)) {
+                Explode();
+            }
 
             if (InputManager.I.keyJump) {
                 Explode();
@@ -98,17 +106,26 @@ public class TemporaryBubble : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        start = true;   
+        start = true;
+
+        if (!collision.gameObject.CompareTag("Player")) {
+            Explode();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        start = true;
+        //start = true;
 
         if (collision.gameObject.CompareTag("Player")) {
             Move();
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, sphereRadius);
     }
 }

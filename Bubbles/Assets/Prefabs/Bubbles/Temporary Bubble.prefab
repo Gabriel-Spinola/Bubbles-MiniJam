@@ -115,4 +115,4 @@ MonoBehaviour:
   explodeEffect: {fileID: 8301161908572177343, guid: a6aee8793948ebb47bfc594e7ab8e779,
     type: 3}
   speed: 10
-  duration: 1
+  duration: 2

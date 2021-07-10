@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb = null;
 
+    private Vector2 wallDir = Vector2.zero;
+
     private bool wallJumped = false;
     private bool useBetterJump = true;
 
@@ -137,8 +139,6 @@ public class Player : MonoBehaviour
         StopCoroutine(DisableMovement(0f));
         StartCoroutine(DisableMovement(0.1f));
 
-        Vector2 wallDir = isLeftWall ? Vector2.right : Vector2.left;
-
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += (Vector2.up / 1.5f + wallDir / 1.5f) * wallJumpForce;
 
@@ -152,6 +152,8 @@ public class Player : MonoBehaviour
         isLeftWall = Physics2D.OverlapCircle(transform.position + leftColOffset, colRadius, whatIsColEnv);
 
         isOnWall = isRightWall || isLeftWall;
+
+        wallDir = isLeftWall ? Vector2.right : Vector2.left;
     }
 
     private void BetterJumping()

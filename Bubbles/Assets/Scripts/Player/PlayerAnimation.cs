@@ -16,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour
     private void LateUpdate()
     {
         anim.SetBool("isMoving", InputManager.I.xAxis != 0);
-        anim.SetBool("isWallrunning", !player.isGrounded && player.isOnWall);
+        anim.SetBool("isJumping", InputManager.I.keyJump);
+        anim.SetBool("isFalling", player.GetRigidbody().velocity.y < .1f && !player.isGrounded);
     }
 }

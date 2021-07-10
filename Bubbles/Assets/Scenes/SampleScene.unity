@@ -538,11 +538,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
 --- !u!1 &138932102
@@ -1371,11 +1366,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
 --- !u!1001 &414879257
@@ -1444,11 +1434,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
@@ -1734,11 +1719,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
@@ -7177,11 +7157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
 --- !u!1001 &868790061
@@ -7250,11 +7225,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
@@ -7467,11 +7437,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
@@ -7941,11 +7906,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
 --- !u!1 &1312286591
@@ -8123,11 +8083,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
 --- !u!1001 &1375236647
@@ -8196,11 +8151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}
@@ -8925,7 +8875,7 @@ MonoBehaviour:
   jumpForce: 15
   fallMultiplier: 3
   lowJumpMultiplier: 6
-  wallJumpForce: 20
+  wallJumpForce: 18
   amountOfWallJumpsPossible: 4
   bottomColOffset: {x: 0, y: -0.37, z: 0}
   rightColOffset: {x: 0.23, y: -0.09, z: 0}
@@ -9112,11 +9062,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 836864223073196527, guid: e9ca04b0940e18f49a2212b1791a5430,
-        type: 3}
-      propertyPath: kockbackForce
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ca04b0940e18f49a2212b1791a5430, type: 3}

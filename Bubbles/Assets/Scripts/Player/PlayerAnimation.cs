@@ -10,10 +10,10 @@ public class PlayerAnimation : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        player = GetComponent<Player>();
+        player = GameObject.Find("[Player]").GetComponent<Player>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         anim.SetBool("isMoving", InputManager.I.xAxis != 0);
         anim.SetBool("isWallrunning", !player.isGrounded && player.isOnWall);

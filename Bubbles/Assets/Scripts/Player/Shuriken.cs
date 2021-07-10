@@ -58,6 +58,10 @@ public class Shuriken : MonoBehaviour
         if (collision.gameObject.layer == 8) {
             life--;
         }
+
+        if (collision.gameObject.CompareTag("Destructable")) {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

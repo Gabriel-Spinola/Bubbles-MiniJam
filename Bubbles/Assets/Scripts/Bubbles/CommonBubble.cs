@@ -8,7 +8,7 @@ public class CommonBubble : MonoBehaviour
     [SerializeField] protected ParticleSystem movingEffect = null;
     [SerializeField] protected GameObject explodeEffect = null;
 
-    [SerializeField] private float kockbackForce = 5f;
+    [SerializeField] private float kockbackForce = 10f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

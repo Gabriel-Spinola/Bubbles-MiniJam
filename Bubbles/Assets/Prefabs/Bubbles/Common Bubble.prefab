@@ -114,4 +114,4 @@ MonoBehaviour:
   movingEffect: {fileID: 0}
   explodeEffect: {fileID: 8301161908572177343, guid: a6aee8793948ebb47bfc594e7ab8e779,
     type: 3}
-  kockbackForce: 20
+  kockbackForce: 14

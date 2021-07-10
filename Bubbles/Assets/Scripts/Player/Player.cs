@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float bottomColRadius = 0.5f;
 
     [HideInInspector] public bool canMove = true;
+    [HideInInspector] public bool useBetterJump = true;
     [HideInInspector] public bool shouldLerpMovement = false;
 
     public static Player I { get; private set; }
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
             wallJumped = false;
             wallJumpCount = 0;
             shouldLerpMovement = false;
+            useBetterJump = true;
         }
 
         if (canJump > 0 && InputManager.I.keyJump)
@@ -122,6 +124,8 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += dir * jumpForce;
 
+        useBetterJump = false;
+
         canJump = 0;
     }
 
@@ -152,6 +156,9 @@ public class Player : MonoBehaviour
 
     private void BetterJumping()
     {
+        if (useBetterJump is false)
+            return;
+
         if (rb.velocity.y < 0) {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }

@@ -86,7 +86,7 @@ public class TemporaryBubble : MonoBehaviour
 
         player.canMove = true;
         player.shouldLerpMovement = true;
-        player.GetRigidbody().gravityScale = 1;
+        player.GetRigidbody().gravityScale = 2.5f;
 
         player.Jump(Vector2.up, 10f);
 
@@ -98,7 +98,7 @@ public class TemporaryBubble : MonoBehaviour
     {
         player.canMove = true;
         player.shouldLerpMovement = true;
-        player.GetRigidbody().gravityScale = 1;
+        player.GetRigidbody().gravityScale = 2.5f;
 
         player.Jump(Vector2.up, 10f);
 

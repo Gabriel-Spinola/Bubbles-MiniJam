@@ -8963,6 +8963,9 @@ MonoBehaviour:
     m_Bits: 1024
   attackPointRotRadius: 1
   damage: 15
+  duration: 1
+  cooldown: 5
+  maxAmountOfShurikens: 3
 --- !u!1 &1686611988
 GameObject:
   m_ObjectHideFlags: 3

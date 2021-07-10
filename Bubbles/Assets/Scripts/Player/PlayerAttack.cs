@@ -18,13 +18,20 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Shuriken")]
     [SerializeField] private float damage = 15f;
+    [SerializeField] private float duration = 5f;
+    [SerializeField] private float cooldown = .5f;
+
+    [SerializeField] private int maxAmountOfShurikens = 3;
 
     private Player player = null;
     private Shuriken shuriken = null;
 
     private float angle = 0f;
 
-    bool shotted = false;
+    private int shurikensUsed = 0;
+
+    private bool isAShuriken = false;
+    private bool canShoot = true;
 
     private void Awake() => player = GetComponent<Player>();
 
@@ -32,14 +39,19 @@ public class PlayerAttack : MonoBehaviour
     {
         angle = StaticRes.LookDir(transform.position);
 
-        if (InputManager.I.btnThrowShuriken && !shotted) {
+        if (InputManager.I.btnThrowShuriken && !isAShuriken && shurikensUsed < maxAmountOfShurikens && canShoot) {
             Shoot();
+
+            shurikensUsed++;
+
+            StartCoroutine(Cooldown(cooldown));
         }
         
         Aim();
 
-        if (shotted) {
-            player.isAShuriken = true;
+        player.isAShuriken = isAShuriken;
+
+        if (isAShuriken) {
             transform.position = shuriken.transform.position;
         }
     }
@@ -54,7 +66,27 @@ public class PlayerAttack : MonoBehaviour
     private void Shoot()
     {
         shuriken = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Shuriken>();
-        shotted = true;   
+
+        StartCoroutine(EnableIsAShuriken(duration));
+        StartCoroutine(shuriken.DieOnTimer(duration));
+    }
+
+    private IEnumerator EnableIsAShuriken(float time)
+    {
+        isAShuriken = true;
+
+        yield return new WaitForSeconds(time);
+
+        isAShuriken = false;
+    }
+    
+    private IEnumerator Cooldown(float time)
+    {
+        canShoot = false;
+
+        yield return new WaitForSeconds(time);
+
+        canShoot = true;
     }
 
     private void OnDrawGizmosSelected()

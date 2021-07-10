@@ -51,10 +51,8 @@ public abstract class Enemy : MonoBehaviour
 
     protected bool canMove = true;
 
-    private int randomSpot = 0;
     private int currentWaypoint = 0;
 
-    private float waitTime = 0f;
     private float currentHealth = 0f;
 
     protected virtual void Awake()

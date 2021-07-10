@@ -10261,6 +10261,8 @@ MonoBehaviour:
   attackPoint: {fileID: 1167193070}
   projectile: {fileID: 4198764625446324580, guid: 219df7e4785d8ad4b833f157de0f9d6c,
     type: 3}
+  smokeEffect: {fileID: 1916417618959721411, guid: 7d6b243816e273b4eb5379d5badf1406,
+    type: 3}
   whatIsEnv:
     serializedVersion: 2
     m_Bits: 256

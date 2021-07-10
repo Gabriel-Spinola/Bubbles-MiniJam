@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform attackPoint = null;
     [SerializeField] private GameObject projectile = null;
+    [SerializeField] private GameObject smokeEffect = null;
 
     [SerializeField] private LayerMask whatIsEnv = 0;
 
@@ -46,8 +47,10 @@ public class PlayerAttack : MonoBehaviour
             StopCoroutine(EnableIsAShuriken(0f));
             StopCoroutine(shuriken.DieOnTimer(0f));
 
+            Instantiate(smokeEffect).GetComponent<Transform>().position = transform.position;
+
             isAShuriken = false;
-            shuriken.isBreaked = true;
+            shuriken.isBreaked = true; 
         }
 
         if (InputManager.I.btnThrowShuriken && !isAShuriken && shurikensUsed < maxAmountOfShurikens && canShoot) {
@@ -91,6 +94,8 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(EnableIsAShuriken(duration));
         StartCoroutine(shuriken.DieOnTimer(duration));
+
+        Instantiate(smokeEffect).GetComponent<Transform>().position = transform.position;
     }
 
     private IEnumerator EnableIsAShuriken(float time)
@@ -100,6 +105,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         isAShuriken = false;
+        Instantiate(smokeEffect).GetComponent<Transform>().position = transform.position;
     }
     
     private IEnumerator Cooldown(float time)

@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
         xAxis = Input.GetAxisRaw("Horizontal");
 
         keyD = Input.GetKeyDown(KeyCode.D);
-        keyA = Input.GetKeyDown(KeyCode.A); 
+        keyA = Input.GetKeyDown(KeyCode.A);
         keyW = Input.GetKeyDown(KeyCode.W);
         keyS = Input.GetKeyDown(KeyCode.S);
 

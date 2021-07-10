@@ -167,10 +167,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FlipSprite() 
-    { 
-        transform.localScale = lookAngle < 90 && lookAngle > -90 ? new Vector3(1f, 1f, 1f) : new Vector3(-1f, 1f, 1f);
-    }
+    private void FlipSprite() => transform.localScale = InputManager.I.xAxis < 0 ? new Vector2(-1f, 1f) : (
+        InputManager.I.xAxis > 0 ? new Vector2(1f, 1f) : new Vector2(transform.localScale.x, 1f)
+    );
 
     public void TakeDamage(float damage) => health -= damage;
 

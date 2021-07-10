@@ -50,9 +50,7 @@ public class Shuriken : MonoBehaviour
 
         try {
             Destroy(gameObject);
-        } catch {
-
-        }
+        } catch { }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

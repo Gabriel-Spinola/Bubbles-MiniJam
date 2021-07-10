@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform attackPoint = null;
     [SerializeField] private GameObject projectile = null;
-    //[SerializeField] private ParticleSystem shootParticle = null;
 
     [SerializeField] private LayerMask whatIsEnemy = 0;
 
@@ -21,21 +20,28 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float damage = 15f;
 
     private Player player = null;
+    private Shuriken shuriken = null;
 
     private float angle = 0f;
 
+    bool shotted = false;
+
     private void Awake() => player = GetComponent<Player>();
 
-    // Update is called once per frame
     private void Update()
     {
         angle = StaticRes.LookDir(transform.position);
 
-        if (InputManager.I.btnThrowShuriken) {
+        if (InputManager.I.btnThrowShuriken && !shotted) {
             Shoot();
         }
         
         Aim();
+
+        if (shotted) {
+            player.isAShuriken = true;
+            transform.position = shuriken.transform.position;
+        }
     }
 
     private void Aim()
@@ -47,7 +53,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Shoot()
     {
-        Shuriken shuriken_ = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Shuriken>();
+        shuriken = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Shuriken>();
+        shotted = true;   
     }
 
     private void OnDrawGizmosSelected()

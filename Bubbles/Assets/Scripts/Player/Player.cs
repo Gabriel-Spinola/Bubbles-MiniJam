@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public bool canMove = true;
     [HideInInspector] public bool shouldLerpMovement = false;
+    [HideInInspector] public bool isAShuriken = false;
 
     public static Player I { get; private set; }
 
@@ -70,28 +71,33 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        lookAngle = StaticRes.LookDir(transform.position);
+        if (!isAShuriken) {
+            transform.GetChild(0).gameObject.SetActive(true);
 
-        Collision();
-        FlipSprite();
-        Movement();
-        BetterJumping();
+            Collision();
+            FlipSprite();
+            Movement();
+            BetterJumping();
 
-        canJump -= 1;
+            canJump -= 1;
 
-        if (isGrounded) {
-            canJump = 10;
+            if (isGrounded) {
+                canJump = 10;
 
-            wallJumped = false;
-            wallJumpCount = 0;
-            shouldLerpMovement = false;
-            useBetterJump = true;
+                wallJumped = false;
+                wallJumpCount = 0;
+                shouldLerpMovement = false;
+                useBetterJump = true;
+            }
+
+            if (canJump > 0 && InputManager.I.keyJump)
+                Jump();
+            if (isOnWall && !isGrounded && InputManager.I.keyJump && wallJumpCount < amountOfWallJumpsPossible)
+                WallJump();
         }
-
-        if (canJump > 0 && InputManager.I.keyJump)
-            Jump();
-        if (isOnWall && !isGrounded && InputManager.I.keyJump && wallJumpCount < amountOfWallJumpsPossible)
-            WallJump();
+        else {
+            transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 
     private void Movement()

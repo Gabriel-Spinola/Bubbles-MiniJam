@@ -16,14 +16,16 @@ public class Player : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float friction = 0.25f;
-
-    public float lerpMovement = 10;
+    [SerializeField] private float lerpMovement = 10;
 
     [Header("Jump")]
     [SerializeField] private float jumpForce = 12f;
-    [SerializeField] private float wallJumpForce = 5f;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
+
+    [Header("Walljump")]
+    [SerializeField] private float wallJumpForce = 5f;
+    [SerializeField] private int amountOfWallJumpsPossible = 3;
 
     [Header("Collision")]
     [SerializeField] private Vector3 bottomColOffset = Vector2.zero;
@@ -48,6 +50,8 @@ public class Player : MonoBehaviour
     private bool isOnWall = false;
 
     private bool wallJumped = false;
+
+    private int wallJumpCount = 0;
 
     private float lookAngle = 0f;
     
@@ -75,12 +79,13 @@ public class Player : MonoBehaviour
             canJump = 10;
 
             wallJumped = false;
+            wallJumpCount = 0;
             shouldLerpMovement = false;
         }
 
         if (canJump > 0 && InputManager.I.keyJump)
             Jump();
-        if (isOnWall && !isGrounded && InputManager.I.keyJump)
+        if (isOnWall && !isGrounded && InputManager.I.keyJump && wallJumpCount < amountOfWallJumpsPossible)
             WallJump();
     }
 
@@ -130,7 +135,9 @@ public class Player : MonoBehaviour
         Vector2 wallDir = isLeftWall ? Vector2.right : Vector2.left;
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.velocity += (Vector2.up / 1.5f + wallDir / 1.5f) * wallJumpForce;
+        rb.velocity += (Vector2.up / 2 + wallDir * 1f) * wallJumpForce;
+
+        wallJumpCount += 1;
     }
 
     private void Collision()

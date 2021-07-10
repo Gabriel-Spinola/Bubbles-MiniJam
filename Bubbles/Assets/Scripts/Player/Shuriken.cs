@@ -4,14 +4,31 @@ using System.Collections;
 
 public class Shuriken : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private float reflectForce = 20f;
+    public int life = 3;
+
+    public float speed = 10f;
+    public float reflectForce = 20f;
+
+    [Range(0.1f, 1f)]
+    [SerializeField] private float colRadius = 0.32f;
+
+    private Collider2D col;
 
     void Update()
     {
         Vector3 dir = StaticRes.LookDir(transform.position, true);
 
         transform.Translate(dir.normalized * speed * Time.deltaTime);
+
+        Collider2D col = Physics2D.OverlapCircle(transform.position, colRadius);
+
+        if (col /*&& col.gameObject.layer == 8*/) {
+            Vector3 reflectDir = col.gameObject.transform.position - transform.position;
+
+            Debug.Log($"Collided: { col.gameObject.name }");
+
+            transform.Translate(reflectDir.normalized * reflectForce * Time.deltaTime);
+        }
     }
 
     public IEnumerator DieOnTimer(float time)
@@ -21,12 +38,8 @@ public class Shuriken : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDrawGizmosSelected()
     {
-        Debug.Log("Ue");
-
-        var dir = collision.gameObject.transform.position - transform.position;
-
-        transform.Translate(dir * reflectForce * Time.deltaTime);
+        Gizmos.DrawWireSphere(transform.position, colRadius);
     }
 }

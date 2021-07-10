@@ -44,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
 
             shurikensUsed++;
 
-            StartCoroutine(Cooldown(cooldown));
+            StartCoroutine(Cooldown(duration + cooldown));
         }
         
         Aim();

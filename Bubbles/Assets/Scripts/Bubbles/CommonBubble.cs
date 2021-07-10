@@ -15,7 +15,7 @@ public class CommonBubble : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) {
             Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
 
-            Player player_ = collision.gameObject.AddComponent<Player>();
+            Player player_ = collision.gameObject.GetComponent<Player>();
 
             player_.shouldLerpMovement = true;
 

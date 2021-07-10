@@ -1148,6 +1148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1216,6 +1221,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -1501,6 +1511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -2136,26 +2151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Temporary Bubble (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964574776201235336, guid: c89e3db0b56547e488379d761868ef20,
-        type: 3}
-      propertyPath: duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964574776201235336, guid: c89e3db0b56547e488379d761868ef20,
-        type: 3}
-      propertyPath: sphereRadius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964574776201235336, guid: c89e3db0b56547e488379d761868ef20,
-        type: 3}
-      propertyPath: whatIsWall.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2964574776201235336, guid: c89e3db0b56547e488379d761868ef20,
-        type: 3}
-      propertyPath: speed
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2964574776201235337, guid: c89e3db0b56547e488379d761868ef20,
         type: 3}
@@ -7102,6 +7097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7170,6 +7170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -7382,6 +7387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -7881,6 +7891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8058,6 +8073,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8126,6 +8146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -8958,13 +8983,15 @@ MonoBehaviour:
   attackPoint: {fileID: 1167193070}
   projectile: {fileID: 4198764625446324580, guid: 219df7e4785d8ad4b833f157de0f9d6c,
     type: 3}
-  whatIsEnemy:
+  whatIsEnv:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
   attackPointRotRadius: 1
-  damage: 15
-  duration: 1
+  shurikenHealth: 3
+  duration: 8
   cooldown: 5
+  shurikenSpeed: 10
+  shurikenReflectForce: 50
   maxAmountOfShurikens: 3
 --- !u!1 &1686611988
 GameObject:
@@ -9064,6 +9091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
@@ -9324,7 +9356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885561825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: '[Bubbles]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9530,6 +9562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9599,6 +9636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common Bubble (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9667,6 +9709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Temporary Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964574776201235334, guid: c89e3db0b56547e488379d761868ef20,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2964574776201235336, guid: c89e3db0b56547e488379d761868ef20,
         type: 3}
@@ -9854,6 +9901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Common Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 836864223073196525, guid: e9ca04b0940e18f49a2212b1791a5430,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 836864223073196526, guid: e9ca04b0940e18f49a2212b1791a5430,
         type: 3}

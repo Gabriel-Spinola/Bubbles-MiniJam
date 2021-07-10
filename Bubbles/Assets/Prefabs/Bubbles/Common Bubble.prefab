@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 836864223073196528}
   - component: {fileID: 836864223073196530}
   - component: {fileID: 836864223073196527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Common Bubble
   m_TagString: Bubbles
   m_Icon: {fileID: 0}

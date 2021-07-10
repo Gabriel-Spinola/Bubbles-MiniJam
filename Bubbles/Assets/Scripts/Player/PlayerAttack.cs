@@ -9,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform attackPoint = null;
     [SerializeField] private GameObject projectile = null;
 
-    [SerializeField] private LayerMask whatIsEnemy = 0;
+    [SerializeField] private LayerMask whatIsEnv = 0;
 
     [Header("Config")]
     [Tooltip("Defines how far the melee attack point will get from player")]
@@ -17,9 +17,11 @@ public class PlayerAttack : MonoBehaviour
     public float attackPointRotRadius = 1f;
 
     [Header("Shuriken")]
-    [SerializeField] private float damage = 15f;
+    [SerializeField] private int shurikenHealth = 3;
     [SerializeField] private float duration = 5f;
     [SerializeField] private float cooldown = .5f;
+    [SerializeField] private float shurikenSpeed = 10f;
+    [SerializeField] private float shurikenReflectForce = 20f;
 
     [SerializeField] private int maxAmountOfShurikens = 3;
 
@@ -53,6 +55,11 @@ public class PlayerAttack : MonoBehaviour
 
         if (isAShuriken) {
             transform.position = shuriken.transform.position;
+            player.GetRigidbody().gravityScale = 0f;
+        }
+        else {
+            player.GetRigidbody().gravityScale = 2.5f;
+            player.shouldLerpMovement = true;
         }
     }
 
@@ -66,6 +73,11 @@ public class PlayerAttack : MonoBehaviour
     private void Shoot()
     {
         shuriken = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Shuriken>();
+
+        shuriken.whatIsEnv = whatIsEnv;
+        shuriken.life = shurikenHealth;
+        shuriken.speed = shurikenSpeed;
+        shuriken.reflectForce = shurikenReflectForce;
 
         StartCoroutine(EnableIsAShuriken(duration));
         StartCoroutine(shuriken.DieOnTimer(duration));

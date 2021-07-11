@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
         }
         else {
             Destroy(gameObject);
+
+            return;
         }
 
         DontDestroyOnLoad(gameObject);
@@ -27,6 +29,11 @@ public class AudioManager : MonoBehaviour
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
+    }
+
+    private void Start()
+    {
+        Play("Theme");
     }
 
     public void Play(string name)

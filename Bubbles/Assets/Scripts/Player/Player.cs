@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private ParticleSystem dustEffect = null;
+    [SerializeField] private AudioManager audioManager = null;
 
     [SerializeField] private LayerMask whatIsColEnv = 0;
 
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
+        audioManager.Play("PlayerJump");
         dustEffect.Play();
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -128,6 +130,8 @@ public class Player : MonoBehaviour
     
     public void Jump(Vector2 dir, float jumpForce)
     {
+        audioManager.Play("PlayerJump");
+
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += dir * jumpForce;
 

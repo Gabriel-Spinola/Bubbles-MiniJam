@@ -16,11 +16,10 @@ public class TemporaryBubble : MonoBehaviour
 
     private Player player = null;
 
-    private int xDir = 0;
-    private int yDir = 0;
+    [SerializeField] private int xDir = 0;
+    [SerializeField] private int yDir = 0;
 
-    private bool xHasChoosed = false;
-    private bool yHasChoosed = false;
+    private bool hasChoosed = false;
 
     bool start = false;
 
@@ -41,28 +40,10 @@ public class TemporaryBubble : MonoBehaviour
                 Debug.Log("Kidding me?");
             }
 
-            if (InputManager.I.keyD && !xHasChoosed) {
-                xDir = 1;
-
-                xHasChoosed = true;
-            }
-
-            if (InputManager.I.keyA && !xHasChoosed) {
-                xDir = -1;
-
-                xHasChoosed = true;
-            }
-
-            if (InputManager.I.keyW && !yHasChoosed) {
-                yDir = 1;
-
-                yHasChoosed = true;
-            }
-
-            if (InputManager.I.keyS && !yHasChoosed) {
-                yDir = -1;
-
-                yHasChoosed = true;
+            if (InputManager.I.keyD || InputManager.I.keyA || InputManager.I.keyW || InputManager.I.keyS) {
+                if (!hasChoosed) {
+                    hasChoosed = true;
+                }
             }
         }
     }
@@ -75,7 +56,7 @@ public class TemporaryBubble : MonoBehaviour
             player.GetRigidbody().gravityScale = 0;
         }
 
-        if (xHasChoosed || yHasChoosed)
+        if (hasChoosed)
            StartCoroutine(Explode(duration));
 
         transform.Translate(transform.right * xDir * speed * Time.deltaTime);

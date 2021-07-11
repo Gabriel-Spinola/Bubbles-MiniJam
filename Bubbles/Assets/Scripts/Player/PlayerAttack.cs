@@ -35,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool isAShuriken = false;
     private bool canShoot = true;
+    private bool isOnShurikenAreas = true;
 
     private void Awake() => player = GetComponent<Player>();
 
@@ -52,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
             shuriken.isBreaked = true; 
         }
 
-        if (InputManager.I.btnThrowShuriken && !isAShuriken && shurikensUsed < maxAmountOfShurikens && canShoot) {
+        if (InputManager.I.btnThrowShuriken && !isAShuriken && shurikensUsed < maxAmountOfShurikens && canShoot && isOnShurikenAreas) {
             Shoot();
 
             shurikensUsed++;
@@ -114,6 +115,16 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         canShoot = true;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 11) {
+            isOnShurikenAreas = false;
+        }
+        else if (collision.gameObject.layer == 12) {
+            isOnShurikenAreas = true;
+        }
     }
 
     private void OnDrawGizmosSelected()

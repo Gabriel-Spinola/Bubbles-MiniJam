@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 8454c642fe47a384aa7305d977258d1a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1112702474063329982
+    second: bandeira_de_chegada_0
+  - first:
+      213: 5601561289185165676
+    second: bandeira_de_chegada_1
+  - first:
+      213: -961935839282327032
+    second: bandeira_de_chegada_2
+  - first:
+      213: -2751031891453628436
+    second: bandeira_de_chegada_3
+  - first:
+      213: 2646689800330886469
+    second: bandeira_de_chegada_4
+  - first:
+      213: 8041491857938337855
+    second: bandeira_de_chegada_5
+  - first:
+      213: 8636251033421195935
+    second: bandeira_de_chegada_6
+  - first:
+      213: -1883321338445776320
+    second: bandeira_de_chegada_7
+  - first:
+      213: -7726691140055355070
+    second: bandeira_de_chegada_8
+  - first:
+      213: 8163539861406930545
+    second: bandeira_de_chegada_9
+  - first:
+      213: 8687847206137111418
+    second: bandeira_de_chegada_10
+  - first:
+      213: 1977092800585490641
+    second: bandeira_de_chegada_11
+  - first:
+      213: 4517516466515897998
+    second: bandeira_de_chegada_12
+  - first:
+      213: -1522444834830902047
+    second: bandeira_de_chegada_13
+  - first:
+      213: 1255876270662906988
+    second: bandeira_de_chegada_14
+  - first:
+      213: 2228356874876257404
+    second: bandeira_de_chegada_15
+  - first:
+      213: -176546448994613300
+    second: bandeira_de_chegada_16
+  - first:
+      213: 5197815749427114608
+    second: bandeira_de_chegada_17
+  - first:
+      213: -8420911840723527007
+    second: bandeira_de_chegada_18
+  - first:
+      213: 1007198563480033025
+    second: bandeira_de_chegada_19
+  - first:
+      213: -6305898493130838440
+    second: bandeira_de_chegada_20
+  - first:
+      213: -728451546581338762
+    second: bandeira_de_chegada_21
+  - first:
+      213: -7349646965933159214
+    second: bandeira_de_chegada_0
+  - first:
+      213: 4740729695503715647
+    second: bandeira_de_chegada_1
+  - first:
+      213: 6966188034202775309
+    second: bandeira_de_chegada_2
+  - first:
+      213: 4576524961138766924
+    second: bandeira_de_chegada_3
+  - first:
+      213: 502505583804143721
+    second: bandeira_de_chegada_4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bandeira_de_chegada_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 26
+        height: 46
+      alignment: 9
+      pivot: {x: 0.16405798, y: 0.5043153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcc60b460fc00a90800000000000000
+      internalID: -7349646965933159214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bandeira_de_chegada_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.1823822, y: 0.5043153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d05a46a847ac140800000000000000
+      internalID: 4740729695503715647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bandeira_de_chegada_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.1823822, y: 0.5043153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fab31db1fdca060800000000000000
+      internalID: 6966188034202775309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bandeira_de_chegada_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0
+        width: 25
+        height: 46
+      alignment: 9
+      pivot: {x: 0.1585608, y: 0.49999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4472666435138f30800000000000000
+      internalID: 4576524961138766924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

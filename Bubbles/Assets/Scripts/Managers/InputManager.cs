@@ -21,6 +21,9 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.gameIsPaused)
+            return;
+
         xAxis = Input.GetAxisRaw("Horizontal");
 
         keyD = Input.GetKeyDown(KeyCode.D);

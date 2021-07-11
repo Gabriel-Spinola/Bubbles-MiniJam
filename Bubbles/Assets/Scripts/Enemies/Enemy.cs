@@ -2,7 +2,6 @@
 using UnityEngine;
 using Pathfinding;
 using System;
-using Resources;
 
 public abstract class Enemy : MonoBehaviour
 {

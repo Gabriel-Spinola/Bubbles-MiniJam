@@ -185,7 +185,7 @@ RectTransform:
   - {fileID: 1351116351}
   - {fileID: 1771667040}
   m_Father: {fileID: 480836912}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 10ccd619be5ac754e8d1f1dfea8c080d, type: 3}
+  m_Texture: {fileID: 2800000, guid: cb05f54592caee14eb4f534dfd10bd1d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9f3d4dbc670a53f4bab24c701efbfbdc, type: 3}
+  m_Texture: {fileID: 2800000, guid: 81cd21210efe1704faecc80566514cd1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: df0449110fab2b34299838837e9b69af, type: 3}
+  m_Texture: {fileID: 2800000, guid: 94f65c7fab49cd74d9e6b2187fa7164b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: bab3fb65ac3f47747843ed100cf5e83b, type: 3}
+  m_Texture: {fileID: 2800000, guid: c3d25a7f76c39954298c0c31edc467a5, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1572,13 +1572,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1653751041}
   m_Father: {fileID: 480836912}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323, y: 454.22}
+  m_AnchoredPosition: {x: -323, y: 379}
   m_SizeDelta: {x: 227.2783, y: 230.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391246402
@@ -1600,7 +1601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0d45ca2e71731bb489b4e75d0f8f5d06, type: 3}
+  m_Texture: {fileID: 2800000, guid: 94f65c7fab49cd74d9e6b2187fa7164b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1902,7 +1903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 480836912}
   m_Layer: 5
-  m_Name: tutorial 1
+  m_Name: -Tutorial 1-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,7 +1923,6 @@ RectTransform:
   - {fileID: 327994349}
   - {fileID: 718585921}
   - {fileID: 391246401}
-  - {fileID: 1653751041}
   - {fileID: 1910942579}
   - {fileID: 53506003}
   - {fileID: 1021596665}
@@ -1995,9 +1995,8 @@ MonoBehaviour:
   m_text: These mischievous threads are very difficult to cut as shuriken gets caught
     in them. Don't pass with shuriken if you don't want to get in trouble!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: -74518160818914006, guid: 74790d9af23cf7142b9e0b6e98814e83,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3210,7 +3209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741, y: 460}
+  m_AnchoredPosition: {x: -741, y: 378}
   m_SizeDelta: {x: 264.4009, y: 242.2686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718585922
@@ -3232,7 +3231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8a85f34f807d1d14d917a33ca86367e7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 96804c69232aef94ba5a988264b75db0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4557,7 +4556,7 @@ RectTransform:
   - {fileID: 995010832}
   - {fileID: 1493445327}
   m_Father: {fileID: 480836912}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4583,7 +4582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5f7e0d7dc3ec0654f9671ab73e5371d2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 109018a3de3afc845bc96832a9048b5e, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4766,7 +4765,7 @@ RectTransform:
   m_Children:
   - {fileID: 656124364}
   m_Father: {fileID: 480836912}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5104,16 +5103,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092336230}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78228897, y: 0.78228897, z: 0.78228897}
   m_Children: []
   m_Father: {fileID: 1771667040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -131}
+  m_AnchoredPosition: {x: -36.767517, y: -102.47983}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092336232
@@ -6350,7 +6349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 77f33ddb8eda2984fa465a59a45a6d88, type: 3}
+  m_Texture: {fileID: 2800000, guid: f48e127dc20d56549a50f4151fc1e764, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6556,7 +6555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 0b67824561228c741b847d71b5788f26, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5f8cc84ae64639d43ac98c431ec31a62, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6939,7 +6938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2ad74994125604c41b4a431e19f89e6e, type: 3}
+  m_Texture: {fileID: 2800000, guid: 5673d9b5dd6028c46933255046acd6e3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7148,9 +7147,8 @@ MonoBehaviour:
   m_text: there   are  3 versions of  these   thorns   all simultaneously dangerous,
     BEWARE!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: -74518160818914006, guid: 74790d9af23cf7142b9e0b6e98814e83,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7539,12 +7537,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 480836912}
-  m_RootOrder: 3
+  m_Father: {fileID: 391246401}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -396, y: 238.88}
+  m_AnchoredPosition: {x: -73, y: -215.33997}
   m_SizeDelta: {x: 184.3891, y: 143.6652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653751042
@@ -7676,7 +7674,7 @@ RectTransform:
   m_Children:
   - {fileID: 1103246818}
   m_Father: {fileID: 480836912}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8418,7 +8416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741341739}
   m_Layer: 5
-  m_Name: tutorial 2
+  m_Name: -Tutorial 2-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8477,7 +8475,7 @@ RectTransform:
   m_GameObject: {fileID: 1771667039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2783, y: 1.2783, z: 1.2783}
   m_Children:
   - {fileID: 1092336231}
   m_Father: {fileID: 53506003}
@@ -8485,7 +8483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 866, y: -0.000014544}
+  m_AnchoredPosition: {x: 913, y: -0.000014544}
   m_SizeDelta: {x: 56.059998, y: 115.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771667041
@@ -8507,7 +8505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c3063f8211475254596dd1dfe577e5b3, type: 3}
+  m_Texture: {fileID: 2800000, guid: be7d7ddb2893749429078add9bd121dc, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -8761,7 +8759,7 @@ RectTransform:
   m_Children:
   - {fileID: 862159350}
   m_Father: {fileID: 480836912}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8787,7 +8785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 73b220d5cc4929d4d8d88818abc764e9, type: 3}
+  m_Texture: {fileID: 2800000, guid: edd83c7c73a27ce4bb188e9b358cd5fe, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -9144,7 +9142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 94c89c8c2a02cef47abbfd22c9b35032, type: 3}
+  m_Texture: {fileID: 2800000, guid: 20d37fd28be75dd42a2c1832759db38a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

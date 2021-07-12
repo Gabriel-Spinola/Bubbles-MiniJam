@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        audioManager.Play("PlayerJump");
+        //audioManager.Play("PlayerJump");
         dustEffect.Play();
 
         rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -134,8 +134,7 @@ public class Player : MonoBehaviour
     
     public void Jump(Vector2 dir, float jumpForce)
     {
-        audioManager.Play("PlayerJump");
-
+        //audioManager.Play("PlayerJump");
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += dir * jumpForce;
 

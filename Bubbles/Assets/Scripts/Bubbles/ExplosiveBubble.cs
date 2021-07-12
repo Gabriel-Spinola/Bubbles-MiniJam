@@ -43,7 +43,13 @@ public class ExplosiveBubble : Enemy
         Chase();
         sr.color = Color.yellow;
 
-        yield return new WaitForSeconds(explosionDelay);
+        //Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+
+        yield return new WaitForSeconds(0.2f);
+
+        Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+
+        yield return new WaitForSeconds(0.3f);
 
         Collider2D hitPlayer = Physics2D.OverlapCircle(transform.position, explosionRadius, whatIsPlayer);
 

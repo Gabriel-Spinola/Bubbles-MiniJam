@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("Shuriken")) {
             GameManager.GoToNextScene();
+
+            GameManager.currentLevel++;
         }
     }
 }

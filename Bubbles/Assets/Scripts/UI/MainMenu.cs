@@ -4,7 +4,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        GameManager.GoToNextScene();
+        GameManager.GoToScene(GameManager.currentLevel);
 
         if (PauseMenu.gameIsPaused) {
             PauseMenu.gameIsPaused = false;

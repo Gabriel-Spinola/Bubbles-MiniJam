@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform attackPoint = null;
     [SerializeField] private GameObject projectile = null;
     [SerializeField] private GameObject smokeEffect = null;
+    [SerializeField] private GameObject ShurikenCannotUseUI = null;
+    [SerializeField] private GameObject ShurikenCanUseUI = null;
 
     [SerializeField] private LayerMask whatIsEnv = 0;
 
@@ -42,6 +44,15 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         angle = StaticRes.LookDir(transform.position);
+
+        if (isOnShurikenAreas) {
+            ShurikenCannotUseUI.SetActive(false);
+            ShurikenCanUseUI.SetActive(true);
+        }
+        else {
+            ShurikenCannotUseUI.SetActive(true);
+            ShurikenCanUseUI.SetActive(false);
+        }
 
         if (isAShuriken && shuriken.life <= 0) {
             StopCoroutine(EnableIsAShuriken(0f));

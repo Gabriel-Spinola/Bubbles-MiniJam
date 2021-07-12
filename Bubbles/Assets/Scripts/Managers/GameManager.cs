@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager I;
+    public static int currentLevel = 1;
     public GameObject[] volumeQualities;
+    
 
     void Awake()
     {
@@ -30,6 +32,16 @@ public class GameManager : MonoBehaviour
     public static void GoToNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    
+    public static void GoToScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+    
+    public static void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     private void VolumeQualityLevel()

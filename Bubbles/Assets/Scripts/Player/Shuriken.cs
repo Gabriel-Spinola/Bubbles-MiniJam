@@ -60,6 +60,7 @@ public class Shuriken : MonoBehaviour
     {
         if (collision.gameObject.layer == 8) {
             GameObject.Find("[Player]").GetComponent<PlayerAttack>().KillShuriken();
+            GameObject.Find("ShurikenCanUse").SetActive(true);
         }
 
         if (collision.gameObject.CompareTag("Destructable")) {

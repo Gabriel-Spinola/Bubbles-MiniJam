@@ -85,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Shoot()
     {
-        shuriken = Instantiate(projectile, attackPoint.position, Quaternion.identity).GetComponent<Shuriken>();
+        shuriken = Instantiate(projectile, attackPoint.position, Quaternion.Euler(0f, 0f, angle)).GetComponent<Shuriken>();
 
         shuriken.whatIsEnv = whatIsEnv;
         shuriken.life = shurikenHealth;
@@ -115,6 +115,17 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         canShoot = true;
+    }
+
+    public void KillShuriken()
+    {
+        StopCoroutine(EnableIsAShuriken(0f));
+        StopCoroutine(shuriken.DieOnTimer(0f));
+
+        Instantiate(smokeEffect).GetComponent<Transform>().position = transform.position;
+
+        isAShuriken = false;
+        shuriken.isBreaked = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -40,6 +40,7 @@ public class ExplosiveBubble : Enemy
 
     private IEnumerator Explode()
     {
+        Chase();
         sr.color = Color.yellow;
 
         yield return new WaitForSeconds(explosionDelay);
@@ -47,8 +48,8 @@ public class ExplosiveBubble : Enemy
         Collider2D hitPlayer = Physics2D.OverlapCircle(transform.position, explosionRadius, whatIsPlayer);
 
         if (hitPlayer) {
-            Player player = hitPlayer.GetComponent<Player>();
-            Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+            Player player = GameObject.Find("[Player]").GetComponent<Player>();
+            Rigidbody2D playerRb = player.GetRigidbody();
 
             Vector2 dir = transform.position - player.transform.position;
 
@@ -60,6 +61,14 @@ public class ExplosiveBubble : Enemy
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Shuriken")) {
+            Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+            Destroy(gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()

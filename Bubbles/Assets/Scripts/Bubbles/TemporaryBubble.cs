@@ -36,9 +36,10 @@ public class TemporaryBubble : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space)) {
                 Explode();
-
-                Debug.Log("Kidding me?");
             }
+
+            if (hasChoosed)
+                StartCoroutine(Explode(duration));
 
             if (InputManager.I.keyD || InputManager.I.keyA || InputManager.I.keyW || InputManager.I.keyS) {
                 if (!hasChoosed) {
@@ -50,17 +51,16 @@ public class TemporaryBubble : MonoBehaviour
 
     private void Move()
     {
-        player.canMove = false;
+        if (hasChoosed) {
+            player.canMove = false;
 
-        if (!InputManager.I.keyJump) {
-            player.GetRigidbody().gravityScale = 0;
+            if (!InputManager.I.keyJump) {
+                player.GetRigidbody().gravityScale = 0;
+            }
+
+            transform.Translate(transform.right * xDir * speed * Time.deltaTime);
+            transform.Translate(transform.up * yDir * speed * Time.deltaTime);
         }
-
-        if (hasChoosed)
-           StartCoroutine(Explode(duration));
-
-        transform.Translate(transform.right * xDir * speed * Time.deltaTime);
-        transform.Translate(transform.up * yDir * speed * Time.deltaTime);
     }
 
     private IEnumerator Explode(float duration)

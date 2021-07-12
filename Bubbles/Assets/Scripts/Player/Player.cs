@@ -81,6 +81,10 @@ public class Player : MonoBehaviour
 
             canJump -= 1;
 
+            if (health <= 0) {
+                Die();
+            }
+
             if (isGrounded) {
                 canJump = 10;
 
@@ -177,6 +181,8 @@ public class Player : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
+
+    private void Die() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     private void FlipSprite() => transform.localScale = InputManager.I.xAxis < 0 ? new Vector2(-1f, 1f) : (
         InputManager.I.xAxis > 0 ? new Vector2(1f, 1f) : new Vector2(transform.localScale.x, 1f)

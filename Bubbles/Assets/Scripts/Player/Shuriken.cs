@@ -40,7 +40,11 @@ public class Shuriken : MonoBehaviour
         Vector2 dir = StaticRes.LookDir(transform.position, true);
         dir.Normalize();
 
-        rb.MovePosition((Vector2) transform.position + (dir * speed * Time.fixedDeltaTime));
+        //rb.MovePosition((Vector2) transform.position + (dir * speed * Time.fixedDeltaTime));
+
+        //rb.MovePosition((Vector2) transform.position + (Vector2.right * speed * Time.fixedDeltaTime));
+
+        transform.Translate(Vector3.right * Time.deltaTime * speed);
     }
 
     public IEnumerator DieOnTimer(float time)
@@ -52,19 +56,20 @@ public class Shuriken : MonoBehaviour
         } catch { }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 8) {
-            life--;
+            GameObject.Find("[Player]").GetComponent<PlayerAttack>().KillShuriken();
         }
 
         if (collision.gameObject.CompareTag("Destructable")) {
             Destroy(collision.gameObject);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+        if (collision.gameObject.layer == 11) {
+            GameObject.Find("[Player]").GetComponent<PlayerAttack>().KillShuriken();
+        }
+
         if (collision.CompareTag("Spikes")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

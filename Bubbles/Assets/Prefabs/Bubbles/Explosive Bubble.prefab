@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4302573588499087570}
   - component: {fileID: 4302573588499087575}
   m_Layer: 0
-  m_Name: Bubble (1)
+  m_Name: Explosive Bubble
   m_TagString: Bubbles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: -1361749039
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cb05f54592caee14eb4f534dfd10bd1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be7d7ddb2893749429078add9bd121dc, type: 3}
   m_Color: {r: 0.9433962, g: 0.12014952, b: 0.3950308, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -203,14 +203,14 @@ MonoBehaviour:
   drawGizmos: 1
   attackPointRotRadius: 0.5
   maxHealth: 100
-  speed: 500
-  chaseRadius: 500
-  attackRadius: 5
+  speed: 900
+  chaseRadius: 10.5
+  attackRadius: 3.62
   nextWaypointDistance: 3
   movingEffect: {fileID: 0}
   explodeEffect: {fileID: 8301161908572177343, guid: dc9c618d08e696a4b8495d237a017dba,
     type: 3}
-  explosionRadius: 2.8
+  explosionRadius: 5
   explosionDamage: 10
-  explosionDelay: 1.5
+  explosionDelay: 0.7
   explosionKnockbackForce: 15

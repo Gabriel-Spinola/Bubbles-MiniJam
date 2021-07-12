@@ -2,13 +2,20 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
+    public TMP_Dropdown qualityDropdown;
 
     private Resolution[] resolutions;
+
+    private void Update()
+    {
+        qualityDropdown.value = QualitySettings.GetQualityLevel();
+    }
 
     private void Start()
     {

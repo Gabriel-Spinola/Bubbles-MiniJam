@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
     public static int currentLevel = 1;
+    public static int qualityLevel = 1;
     public GameObject[] volumeQualities;
-    
 
     void Awake()
     {

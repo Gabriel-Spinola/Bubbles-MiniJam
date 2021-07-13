@@ -98,6 +98,13 @@ public class Player : MonoBehaviour
                 Jump();
             if (isOnWall && !isGrounded && InputManager.I.keyJump && wallJumpCount < amountOfWallJumpsPossible)
                 WallJump();
+
+            if (isOnWall && !isGrounded && rb.velocity.y < 0.001f) {
+                rb.gravityScale = 0.8f;
+            }   
+            else {
+                rb.gravityScale = 2.5f;
+            }
         }
         else {
             transform.GetChild(0).gameObject.SetActive(false);

@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
 
             shurikensUsed++;
 
-            StartCoroutine(Cooldown(duration + cooldown));
+            StartCoroutine(Cooldown(cooldown));
             player.TakeDamage(shurikenDamage);
         }
         
@@ -104,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
         shuriken.reflectForce = shurikenReflectForce;
 
         StartCoroutine(EnableIsAShuriken(duration));
-        StartCoroutine(shuriken.DieOnTimer(duration));
+        //StartCoroutine(shuriken.DieOnTimer(duration));
 
         Instantiate(smokeEffect).GetComponent<Transform>().position = transform.position;
     }

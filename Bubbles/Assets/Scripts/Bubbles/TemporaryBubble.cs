@@ -35,14 +35,16 @@ public class TemporaryBubble : MonoBehaviour
                 Explode();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Explode();
+            if (hasChoosed) {
+                if (InputManager.I.keyJump) {
+                    Explode();
+                }
             }
 
             if (hasChoosed)
                 StartCoroutine(Explode(duration));
 
-            if (InputManager.I.keyD || InputManager.I.keyA || InputManager.I.keyW || InputManager.I.keyS) {
+            if (InputManager.I.keyD || InputManager.I.keyA || InputManager.I.keyS || InputManager.I.keyJump) {
                 if (!hasChoosed) {
                     hasChoosed = true;
                 }
@@ -69,16 +71,6 @@ public class TemporaryBubble : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         Explode();
-
-        /*player.canMove = true;
-        player.shouldLerpMovement = true;
-        player.GetRigidbody().gravityScale = 2.5f;
-
-        player.Jump(Vector2.up, 10f);
-
-        Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
-        Destroy(gameObject);*/
-        
     }
     
     private void Explode()

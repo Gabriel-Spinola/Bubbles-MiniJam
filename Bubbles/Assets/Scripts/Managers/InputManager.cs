@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public bool keyS;
 
     public bool keyJump;
+    public bool keyJumpHold;
     public bool btnThrowShuriken;
 
     private void Awake() => I = this;
@@ -26,12 +27,13 @@ public class InputManager : MonoBehaviour
 
         xAxis = Input.GetAxisRaw("Horizontal");
 
-        keyD = Input.GetKeyDown(KeyCode.D);
-        keyA = Input.GetKeyDown(KeyCode.A);
-        keyW = Input.GetKeyDown(KeyCode.W);
-        keyS = Input.GetKeyDown(KeyCode.S);
+        keyD = Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
+        keyA = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
+        keyW = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
+        keyS = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
 
-        keyJump = Input.GetButtonDown("Jump");
+        keyJump = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Z);
+        keyJumpHold = Input.GetButton("Jump") || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Z);
 
         btnThrowShuriken = Input.GetButtonDown("Fire1");
 

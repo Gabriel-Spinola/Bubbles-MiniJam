@@ -57,9 +57,6 @@ public class Player : MonoBehaviour
     private bool useBetterJump = true;
 
     private int wallJumpCount = 0;
-
-    private float lookAngle = 0f;
-    
     private int canJump = 0;
 
     private void Awake() 
@@ -75,7 +72,7 @@ public class Player : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(true);
 
             Collision();
-            FlipSprite();
+            ScaleControl();
             Movement();
             BetterJumping();
 
@@ -183,16 +180,19 @@ public class Player : MonoBehaviour
         if (rb.velocity.y < 0) {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
+        else if (rb.velocity.y > 0 && !InputManager.I.keyJumpHold) {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
     private void Die() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-    private void FlipSprite() => transform.localScale = InputManager.I.xAxis < 0 ? new Vector2(-1f, 1f) : (
-        InputManager.I.xAxis > 0 ? new Vector2(1f, 1f) : new Vector2(transform.localScale.x, 1f)
-    );
+    private void ScaleControl()
+    {
+        transform.localScale = InputManager.I.xAxis < 0 ? new Vector2(-1f, 1f) : (
+            InputManager.I.xAxis > 0 ? new Vector2(1f, 1f) : new Vector2(transform.localScale.x, 1f)
+        );
+    }
 
     public void TakeDamage(float damage) => health -= damage;
 

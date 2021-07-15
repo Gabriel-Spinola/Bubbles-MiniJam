@@ -6,16 +6,17 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform attackPoint = null;
+
     [SerializeField] private GameObject projectile = null;
     [SerializeField] private GameObject smokeEffect = null;
-    [SerializeField] private GameObject ShurikenCannotUseUI = null;
-    [SerializeField] private GameObject ShurikenCanUseUI = null;
+
+    [SerializeField] private ParticleSystem canUseShurikenEffect = null;
 
     [SerializeField] private LayerMask whatIsEnv = 0;
 
     [Header("Config")]
     [Tooltip("Defines how far the melee attack point will get from player")]
-    [Range(1f, 6f)]
+    [Range(0.1f, 6f)]
     public float attackPointRotRadius = 1f;
 
     [Header("Shuriken")]
@@ -45,13 +46,16 @@ public class PlayerAttack : MonoBehaviour
     {
         angle = StaticRes.LookDir(transform.position);
 
-        if (isOnShurikenAreas) {
-            ShurikenCannotUseUI.SetActive(false);
-            ShurikenCanUseUI.SetActive(true);
+        if (isOnShurikenAreas && shurikensUsed < maxAmountOfShurikens) {
+            if (!canUseShurikenEffect.isPlaying) {
+                canUseShurikenEffect.Play();
+            }
         }
         else {
-            ShurikenCannotUseUI.SetActive(true);
-            ShurikenCanUseUI.SetActive(false);
+            if (canUseShurikenEffect.isPlaying) {
+                canUseShurikenEffect.Clear();
+                canUseShurikenEffect.Pause();
+            }
         }
 
         if (isAShuriken && shuriken.life <= 0) {

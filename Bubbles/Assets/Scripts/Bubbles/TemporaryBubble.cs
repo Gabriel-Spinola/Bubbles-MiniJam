@@ -6,7 +6,8 @@ public class TemporaryBubble : MonoBehaviour
 {
     [SerializeField] private ParticleSystem movingEffect = null;
     [SerializeField] private GameObject explodeEffect = null;
-
+    [SerializeField] private GameObject arrow = null;
+    
     [SerializeField] private LayerMask whatIsWall = 8;
 
     [SerializeField] private float speed = 10f;
@@ -67,14 +68,17 @@ public class TemporaryBubble : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
 
-        player.canMove = true;
+        Explode();
+
+        /*player.canMove = true;
         player.shouldLerpMovement = true;
         player.GetRigidbody().gravityScale = 2.5f;
 
         player.Jump(Vector2.up, 10f);
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
-        Destroy(gameObject);
+        Destroy(gameObject);*/
+        
     }
     
     private void Explode()
@@ -86,6 +90,7 @@ public class TemporaryBubble : MonoBehaviour
         player.Jump(Vector2.up, 10f);
 
         Instantiate(explodeEffect).GetComponent<Transform>().position = transform.position;
+        Destroy(arrow);
         Destroy(gameObject);
     }
 

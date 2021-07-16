@@ -4,7 +4,7 @@ Jumbbubble is a 2D platformer game where you're a cool ninja, that can turn into
 
 This game was made in 72 hours for Mini-Jam 84, the theme was "bubbles" and the limitation was "you are your own ammo."
  
-[GamePage](https://gabriel-spinola.itch.io/jumbbubble)
+### [GamePage](https://gabriel-spinola.itch.io/jumbbubble)
 
 <p float="left">
   <img src="https://user-images.githubusercontent.com/69523963/125943243-5901938d-91a2-436f-bc6e-afdc129badf1.png" width="320" />

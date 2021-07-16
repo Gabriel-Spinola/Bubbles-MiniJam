@@ -1,4 +1,4 @@
-# Bubbles MiniJam
+# Jumbbubble
 
 Jumbbubble is a 2D platformer game where you're a cool ninja, that can turn into a shuriken, to kill evil bubbles and avoid obstacles.
 
